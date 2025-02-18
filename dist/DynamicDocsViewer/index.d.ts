@@ -12,7 +12,7 @@ export declare class DynamicDocsViewer {
     constructor({ context, whiteboardView, box, pages }: DynamicDocsViewerConfig);
     protected sideEffect: SideEffectManager;
     protected context: AppContext;
-    protected pages: DocsViewerPage[];
+    pages: DocsViewerPage[];
     protected box: ReadonlyTeleBox;
     protected whiteboardView: View;
     protected displayer: Displayer;

@@ -126,7 +126,7 @@ export class StaticDocsViewer {
   protected userScrolling = false;
 
   protected readonly: boolean;
-  protected pages: DocsViewerPage[];
+  public pages: DocsViewerPage[];
   protected box: ReadonlyTeleBox;
   protected whiteboardView: View;
   private readonly baseScenePath: string | undefined;

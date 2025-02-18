@@ -34,6 +34,7 @@ export declare class DocsViewer {
     setReadonly(readonly: boolean): void;
     destroy(): void;
     setPageIndex(pageIndex: number): void;
+    private scrollPreview;
     setSmallBox(isSmallBox: boolean): void;
     render(): HTMLElement;
     protected renderContent(): HTMLElement;

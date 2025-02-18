@@ -70,8 +70,9 @@ export class DocsViewer {
     // this.$footer.classList.toggle(this.wrapClassName("hide"), this.box.maximized);
     this.box.events.on("maximized", max => {
       this.$footer.classList.toggle(this.wrapClassName("hide"), max);
-      this.togglePreview(max);
+      // this.togglePreview(max);
     });
+    this.$footer.classList.toggle(this.wrapClassName("hide"), this.box.maximized);
   }
 
   public unmount(): void {
@@ -98,23 +99,7 @@ export class DocsViewer {
 
   public setPageIndex(pageIndex: number): void {
     if (!Number.isNaN(pageIndex)) {
-      const previews = this.$preview?.querySelectorAll<HTMLElement>(
-        "." + this.wrapClassName("preview-page")
-      );
-
-      previews?.forEach((node, i) => {
-        node
-          .querySelector("img")
-          ?.classList.toggle(this.wrapClassName("active"), Number(pageIndex) == i);
-      });
-      this.$preview.scrollTo({
-        top:
-          Array.prototype.slice
-            .call(previews)
-            .find(node =>
-              node.querySelector("img").className.includes(this.wrapClassName("active"))
-            ).offsetTop - 16,
-      });
+      this.scrollPreview(pageIndex);
       this.pageIndex = pageIndex;
       this.$pageNumberInput.textContent = String(pageIndex + 1);
       this.onPageIndexChanged(pageIndex);
@@ -123,6 +108,32 @@ export class DocsViewer {
         this.wrapClassName("footer-btn-disable"),
         pageIndex == this.pages.length - 1
       );
+    }
+  }
+
+  private scrollPreview(pageIndex: number) {
+    const previews = this.$preview?.querySelectorAll<HTMLElement>(
+      "." + this.wrapClassName("preview-page")
+    );
+
+    previews?.forEach((node, i) => {
+      node
+        .querySelector("img")
+        ?.classList.toggle(this.wrapClassName("active"), Number(pageIndex) == i);
+    });
+    const imgNode = Array.prototype.slice
+      .call(previews)
+      .find(node => node.querySelector("img").className.includes(this.wrapClassName("active")));
+    if (!imgNode) return;
+    const parentRect = this.$preview.getBoundingClientRect();
+    const elementRect = imgNode?.getBoundingClientRect();
+    const isInView = elementRect.top >= parentRect.top && elementRect.bottom <= parentRect.bottom;
+
+    if (!isInView) {
+      this.$preview.scrollTo({
+        top: imgNode.offsetTop - 16,
+        behavior: this.isShowPreview ? "smooth" : "auto",
+      });
     }
   }
 
@@ -144,7 +155,6 @@ export class DocsViewer {
       const $content = document.createElement("div");
       $content.className = this.wrapClassName("content");
       this.$content = $content;
-
       if (this.readonly) {
         $content.classList.add(this.wrapClassName("readonly"));
       }

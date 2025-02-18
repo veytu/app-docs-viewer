@@ -72,7 +72,7 @@ export class DynamicDocsViewer {
   protected sideEffect = new SideEffectManager();
 
   protected context: AppContext;
-  protected pages: DocsViewerPage[];
+  public pages: DocsViewerPage[];
   protected box: ReadonlyTeleBox;
   protected whiteboardView: View;
   protected displayer: Displayer;

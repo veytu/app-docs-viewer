@@ -14,14 +14,33 @@ export interface NetlessAppStaticDocsViewerAttributes {
   pageScrollTop?: number;
 }
 
+export interface AppResult {
+  viewer: () => StaticDocsViewer | DynamicDocsViewer | null;
+  position: () => [page: number, length: number] | undefined;
+  nextStep?: () => void;
+  prevStep?: () => void;
+  nextPage?: () => void;
+  prevPage?: () => void;
+  jumpToPage?: (page: number) => void;
+  togglePreview?: (visible?: boolean) => void;
+}
+
 export interface NetlessAppDynamicDocsViewerAttributes {}
 
+export interface AppOptions {}
+
+export type MagixEvents = {
+  [key: string]: string;
+};
+
 const NetlessAppDocsViewer: NetlessApp<
-  NetlessAppStaticDocsViewerAttributes | NetlessAppDynamicDocsViewerAttributes
+  NetlessAppStaticDocsViewerAttributes | NetlessAppDynamicDocsViewerAttributes,
+  MagixEvents,
+  AppOptions,
+  AppResult
 > = {
   kind,
   setup(context) {
-    console.log(context);
     const box = context.getBox();
 
     const scenes = context.getScenes();
@@ -30,6 +49,7 @@ const NetlessAppDocsViewer: NetlessApp<
     }
 
     const whiteboardView = context.getView();
+    console.log(context.storage.state);
     if (!whiteboardView) {
       throw new Error("[Docs Viewer]: no whiteboard view.");
     }
@@ -54,14 +74,14 @@ const NetlessAppDocsViewer: NetlessApp<
     box.mountStyles(styles);
 
     if (pages[0].src.startsWith("ppt")) {
-      setupDynamicDocsViewer(
+      return setupDynamicDocsViewer(
         context as AppContext<NetlessAppDynamicDocsViewerAttributes>,
         whiteboardView,
         box,
         pages
       );
     } else {
-      setupStaticDocsViewer(
+      return setupStaticDocsViewer(
         context as AppContext<NetlessAppStaticDocsViewerAttributes>,
         whiteboardView,
         box,
@@ -78,7 +98,7 @@ function setupStaticDocsViewer(
   whiteboardView: View,
   box: ReadonlyTeleBox,
   pages: DocsViewerPage[]
-): void {
+): AppResult {
   whiteboardView.disableCameraTransform = !context.getIsWritable();
 
   const docsViewer = new StaticDocsViewer({
@@ -124,6 +144,17 @@ function setupStaticDocsViewer(
     docsViewer.setReadonly(!isWritable);
     whiteboardView.disableCameraTransform = !isWritable;
   });
+  return {
+    viewer: () => {
+      return docsViewer;
+    },
+    position: () => {
+      const controller = docsViewer?.viewer;
+      if (controller) {
+        return [controller.pageIndex, docsViewer.pages.length] as [page: number, length: number];
+      }
+    },
+  };
 }
 
 function setupDynamicDocsViewer(
@@ -131,7 +162,7 @@ function setupDynamicDocsViewer(
   whiteboardView: View,
   box: ReadonlyTeleBox,
   pages: DocsViewerPage[]
-): void {
+): AppResult {
   whiteboardView.disableCameraTransform = true;
 
   const docsViewer = new DynamicDocsViewer({
@@ -175,4 +206,33 @@ function setupDynamicDocsViewer(
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
     (window as any).docsViewer = docsViewer;
   }
+
+  return {
+    viewer: () => {
+      return docsViewer;
+    },
+    position: () => {
+      const controller = docsViewer?.viewer;
+      if (controller) {
+        return [controller.pageIndex, docsViewer.pages.length] as [page: number, length: number];
+      }
+    },
+    nextStep: () => {
+      return docsViewer.onPlayPPT();
+    },
+    nextPage: () => {
+      return docsViewer.jumpToPage(docsViewer.getPageIndex() + 1, true);
+    },
+    prevPage: () => {
+      return docsViewer.jumpToPage(docsViewer.getPageIndex() + 1, true);
+    },
+    jumpToPage: (pageIndex?: number) => {
+      if (typeof pageIndex == "number") {
+        docsViewer.jumpToPage(pageIndex, true);
+      }
+    },
+    togglePreview: (visible?: boolean) => {
+      docsViewer.viewer.togglePreview(visible);
+    },
+  };
 }

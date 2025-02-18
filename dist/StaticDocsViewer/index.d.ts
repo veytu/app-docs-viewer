@@ -34,7 +34,7 @@ export declare class StaticDocsViewer {
     protected pageScrollStepper: Stepper;
     protected userScrolling: boolean;
     protected readonly: boolean;
-    protected pages: DocsViewerPage[];
+    pages: DocsViewerPage[];
     protected box: ReadonlyTeleBox;
     protected whiteboardView: View;
     private readonly baseScenePath;

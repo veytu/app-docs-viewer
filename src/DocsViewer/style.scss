@@ -203,7 +203,7 @@ $namespace: $docs-viewer-namespace;
   }
 }
 .#{$namespace}-hide {
-  visibility: hidden;
+  display: none;
 }
 .#{$namespace}-page-jumps {
   flex: 1;
