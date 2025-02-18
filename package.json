@@ -1,0 +1,42 @@
+{
+  "name": "@netless/app-docs-viewer",
+  "version": "0.2.18",
+  "description": "Netless App Docs Viewer",
+  "repository": "netless-io/netless-app",
+  "license": "MIT",
+  "author": "CRIMX <straybugs@gmail.com> (https://github.com/crimx/)",
+  "sideEffects": [
+    "*.css"
+  ],
+  "main": "./dist/main.cjs.js",
+  "module": "./dist/main.es.js",
+  "types": "./dist/index.d.ts",
+  "files": [
+    "src",
+    "dist"
+  ],
+  "scripts": {
+    "types": "cross-env NODE_ENV=production tsc --declaration --emitDeclarationOnly --outDir dist",
+    "build": "vite build && npm run types",
+    "build:dev": "vite build --mode development && npm run types",
+    "cleanup": "rimraf ./dist"
+  },
+  "dependencies": {
+    "@juggle/resize-observer": "^3.3.1",
+    "debounce-fn": "^5.1.0",
+    "vanilla-lazyload": "^17.8.2"
+  },
+  "devDependencies": {
+    "jspdf": "2.5.1",
+    "@netless/app-shared": "workspace:*",
+    "side-effect-manager": "^1.1.0"
+  },
+  "peerDependencies": {
+    "jspdf": "2.5.1"
+  },
+  "peerDependenciesMeta": {
+    "jspdf": {
+      "optional": true
+    }
+  }
+}
