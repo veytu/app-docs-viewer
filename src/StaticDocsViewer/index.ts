@@ -76,6 +76,7 @@ export class StaticDocsViewer {
     };
 
     this.viewer = new DocsViewer({
+      context,
       readonly,
       box,
       pages,

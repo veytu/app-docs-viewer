@@ -1,20 +1,24 @@
-import type { ReadonlyTeleBox } from "@netless/window-manager";
+import type { AppContext, ReadonlyTeleBox } from "@netless/window-manager";
 import { SideEffectManager } from "side-effect-manager";
+import type { AppOptions, NetlessAppDynamicDocsViewerAttributes, NetlessAppStaticDocsViewerAttributes } from "..";
 export interface DocsViewerPage {
     src: string;
     height: number;
     width: number;
     thumbnail?: string;
 }
+declare type contextType = AppContext<NetlessAppStaticDocsViewerAttributes | NetlessAppDynamicDocsViewerAttributes, AppOptions>;
 export interface DocsViewerConfig {
     readonly: boolean;
     box: ReadonlyTeleBox;
     pages: DocsViewerPage[];
     onNewPageIndex: (index: number) => void;
     onPlay?: () => void;
+    context: contextType;
 }
 export declare class DocsViewer {
-    constructor({ readonly, box, pages, onNewPageIndex, onPlay }: DocsViewerConfig);
+    constructor({ context, readonly, box, pages, onNewPageIndex, onPlay }: DocsViewerConfig);
+    protected context: contextType;
     protected readonly: boolean;
     protected pages: DocsViewerPage[];
     protected box: ReadonlyTeleBox;
@@ -49,3 +53,4 @@ export declare class DocsViewer {
     protected isSmallBox: boolean;
     protected sideEffect: SideEffectManager;
 }
+export {};

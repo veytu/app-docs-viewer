@@ -3,9 +3,14 @@ import { arrowRightSVG } from "./icons/arrow-right";
 import { playSVG } from "./icons/play";
 import { pauseSVG } from "./icons/pause";
 
-import type { ReadonlyTeleBox } from "@netless/window-manager";
+import type { AppContext, ReadonlyTeleBox } from "@netless/window-manager";
 import LazyLoad from "vanilla-lazyload";
 import { SideEffectManager } from "side-effect-manager";
+import type {
+  AppOptions,
+  NetlessAppDynamicDocsViewerAttributes,
+  NetlessAppStaticDocsViewerAttributes,
+} from "..";
 
 export interface DocsViewerPage {
   src: string;
@@ -14,20 +19,26 @@ export interface DocsViewerPage {
   thumbnail?: string;
 }
 
+type contextType = AppContext<
+  NetlessAppStaticDocsViewerAttributes | NetlessAppDynamicDocsViewerAttributes,
+  AppOptions
+>;
 export interface DocsViewerConfig {
   readonly: boolean;
   box: ReadonlyTeleBox;
   pages: DocsViewerPage[];
   onNewPageIndex: (index: number) => void;
   onPlay?: () => void;
+  context: contextType;
 }
 
 export class DocsViewer {
-  public constructor({ readonly, box, pages, onNewPageIndex, onPlay }: DocsViewerConfig) {
+  public constructor({ context, readonly, box, pages, onNewPageIndex, onPlay }: DocsViewerConfig) {
     if (pages.length <= 0) {
       throw new Error("[DocsViewer] Empty pages.");
     }
 
+    this.context = context;
     this.readonly = readonly;
     this.box = box;
     this.pages = pages;
@@ -38,6 +49,7 @@ export class DocsViewer {
     this.render();
   }
 
+  protected context: contextType;
   protected readonly: boolean;
   protected pages: DocsViewerPage[];
   protected box: ReadonlyTeleBox;
@@ -58,14 +70,6 @@ export class DocsViewer {
   public mount(): void {
     this.box.mountContent(this.$content);
     this.box.mountFooter(this.$footer);
-
-    this.sideEffect.add(() => {
-      const previewLazyLoad = new LazyLoad({
-        container: this.$preview,
-        elements_selector: `.${this.wrapClassName("preview-page>img")}`,
-      });
-      return () => previewLazyLoad.destroy();
-    }, "preview-lazyload");
 
     // this.$footer.classList.toggle(this.wrapClassName("hide"), this.box.maximized);
     this.box.events.on("maximized", max => {
@@ -121,6 +125,9 @@ export class DocsViewer {
         .querySelector("img")
         ?.classList.toggle(this.wrapClassName("active"), Number(pageIndex) == i);
     });
+
+    if (!previews) return;
+
     const imgNode = Array.prototype.slice
       .call(previews)
       .find(node => node.querySelector("img").className.includes(this.wrapClassName("active")));
@@ -159,8 +166,8 @@ export class DocsViewer {
         $content.classList.add(this.wrapClassName("readonly"));
       }
 
-      $content.appendChild(this.renderPreviewMask());
-      $content.appendChild(this.renderPreview());
+      // $content.appendChild(this.renderPreviewMask());
+      // $content.appendChild(this.renderPreview());
     }
     return this.$content;
   }
@@ -371,16 +378,43 @@ export class DocsViewer {
 
   public togglePreview(isShowPreview?: boolean): void {
     this.isShowPreview = isShowPreview ?? !this.isShowPreview;
-
+    console.log(this.context?.extendWrapper);
     this.$content.classList.toggle(this.wrapClassName("preview-active"), this.isShowPreview);
     if (this.isShowPreview) {
-      const $previewPage = this.$preview.querySelector<HTMLElement>(
-        "." + this.wrapClassName(`preview-page-${this.pageIndex}`)
-      );
-      if ($previewPage) {
-        this.$preview.scrollTo({
-          top: $previewPage.offsetTop - 16,
-        });
+      if (this.context?.extendWrapper) {
+        this.context?.extendWrapper?.appendChild(this.renderPreviewMask());
+        this.context?.extendWrapper?.appendChild(this.renderPreview());
+        this.context.extendWrapper.style.display = "block";
+      }
+      setTimeout(() => {
+        const $previewPage = this.$preview.querySelector<HTMLElement>(
+          "." + this.wrapClassName(`preview-page-${this.pageIndex}`)
+        );
+
+        if ($previewPage) {
+          this.sideEffect.add(() => {
+            const previewLazyLoad = new LazyLoad({
+              container: this.$preview,
+              elements_selector: `.${this.wrapClassName("preview-page>img")}`,
+            });
+            return () => previewLazyLoad.destroy();
+          }, "preview-lazyload");
+
+          this.$preview.scrollTo({
+            top: $previewPage.offsetTop - 16,
+          });
+        }
+
+        if ($previewPage) {
+          this.$preview.scrollTo({
+            top: $previewPage.offsetTop - 16,
+          });
+        }
+      });
+    } else {
+      if (this.context?.extendWrapper) {
+        this.context.extendWrapper.style.display = "none";
+        this.context.extendWrapper.innerHTML = "";
       }
     }
   }

@@ -28,6 +28,7 @@ export class DynamicDocsViewer {
     this.displayer = context.getDisplayer();
 
     this.viewer = new DocsViewer({
+      context,
       readonly: !context.getIsWritable(),
       box,
       pages,

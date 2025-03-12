@@ -9,7 +9,7 @@ $namespace: $docs-viewer-namespace;
 }
 
 .#{$namespace}-preview-mask {
-  display: none;
+  display: block;
   position: absolute;
   z-index: 200;
   top: 0;
@@ -29,7 +29,6 @@ $namespace: $docs-viewer-namespace;
   width: 23%;
   height: 100%;
   padding: 12px;
-  transform: translateX(100%);
   box-shadow: -4.8px -3.2px 20px rgba(32, 35, 56, 0.15);
   transition: transform 0.4s;
   background: #f5f5fc;
@@ -37,7 +36,6 @@ $namespace: $docs-viewer-namespace;
   -webkit-box-shadow: -4.8px -3.2px 20px rgba(32, 35, 56, 0.15);
   height: 100%;
   position: absolute;
-  opacity: 0;
 }
 
 .#{$namespace}-preview-active {
