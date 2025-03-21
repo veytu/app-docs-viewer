@@ -244,8 +244,8 @@ export class StaticDocsViewer {
       }
 
       if (this.box.$footer) {
-        const footerHeight = footerActualHeight + emptySpace;
-        this.box.$footer.style.height = `${footerHeight * 100}%`;
+        // const footerHeight = footerActualHeight + emptySpace;
+        this.box.$footer.style.height = `40px`;
       }
     } else {
       if (this.box.$titleBar) {
@@ -254,8 +254,8 @@ export class StaticDocsViewer {
       }
 
       if (this.box.$footer) {
-        const footerHeight = Math.max(40 / RATIO_BASE_CONTAINER_HEIGHT, 40 / boxHeight);
-        this.box.$footer.style.height = `${footerHeight * 100}%`;
+        // const footerHeight = Math.max(40 / RATIO_BASE_CONTAINER_HEIGHT, 40 / boxHeight);
+        this.box.$footer.style.height = `40px`;
       }
     }
   }
