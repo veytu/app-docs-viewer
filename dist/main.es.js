@@ -2337,9 +2337,9 @@ class StaticDocsViewer {
     const isSmallBox = boxHeight <= RATIO_BASE_CONTAINER_HEIGHT;
     this.viewer.setSmallBox(isSmallBox);
     if (isSmallBox) {
-      const titleBarSupposedHeight = 26 / RATIO_BASE_CONTAINER_HEIGHT;
-      const titleBarActualHeight = 26 / boxHeight;
-      const footerSupposedHeight = 26 / RATIO_BASE_CONTAINER_HEIGHT;
+      const titleBarSupposedHeight = 40 / RATIO_BASE_CONTAINER_HEIGHT;
+      const titleBarActualHeight = 40 / boxHeight;
+      const footerSupposedHeight = 40 / RATIO_BASE_CONTAINER_HEIGHT;
       const footerActualHeight = 0;
       const emptySpace = Math.max((titleBarSupposedHeight + footerSupposedHeight - (titleBarActualHeight + footerActualHeight)) / 2, 0);
       if (this.box.$titleBar) {
@@ -2352,11 +2352,11 @@ class StaticDocsViewer {
       }
     } else {
       if (this.box.$titleBar) {
-        const titleBarHeight = Math.max(26 / RATIO_BASE_CONTAINER_HEIGHT, 26 / boxHeight);
+        const titleBarHeight = Math.max(40 / RATIO_BASE_CONTAINER_HEIGHT, 40 / boxHeight);
         this.box.$titleBar.style.height = `${titleBarHeight * 100}%`;
       }
       if (this.box.$footer) {
-        const footerHeight = Math.max(26 / RATIO_BASE_CONTAINER_HEIGHT, 26 / boxHeight);
+        const footerHeight = Math.max(40 / RATIO_BASE_CONTAINER_HEIGHT, 40 / boxHeight);
         this.box.$footer.style.height = `${footerHeight * 100}%`;
       }
     }
