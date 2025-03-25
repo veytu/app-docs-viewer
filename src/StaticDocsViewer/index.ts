@@ -228,7 +228,7 @@ export class StaticDocsViewer {
       const titleBarSupposedHeight = 40 / RATIO_BASE_CONTAINER_HEIGHT;
       const titleBarActualHeight = 40 / boxHeight;
       const footerSupposedHeight = 40 / RATIO_BASE_CONTAINER_HEIGHT;
-      const footerActualHeight = 0;
+      const footerActualHeight = 40 / boxHeight;
 
       const emptySpace = Math.max(
         (titleBarSupposedHeight +
@@ -244,8 +244,8 @@ export class StaticDocsViewer {
       }
 
       if (this.box.$footer) {
-        // const footerHeight = footerActualHeight + emptySpace;
-        this.box.$footer.style.height = `40px`;
+        const footerHeight = footerActualHeight + emptySpace;
+        this.box.$footer.style.height = `${footerHeight * 100}%`;
       }
     } else {
       if (this.box.$titleBar) {
@@ -254,8 +254,8 @@ export class StaticDocsViewer {
       }
 
       if (this.box.$footer) {
-        // const footerHeight = Math.max(40 / RATIO_BASE_CONTAINER_HEIGHT, 40 / boxHeight);
-        this.box.$footer.style.height = `40px`;
+        const footerHeight = Math.max(40 / RATIO_BASE_CONTAINER_HEIGHT, 40 / boxHeight);
+        this.box.$footer.style.height = `${footerHeight * 100}%`;
       }
     }
   }
