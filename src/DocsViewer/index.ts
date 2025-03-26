@@ -11,6 +11,7 @@ import type {
   NetlessAppDynamicDocsViewerAttributes,
   NetlessAppStaticDocsViewerAttributes,
 } from "..";
+import { isAndroid, isIOS } from "../utils/environment";
 
 export interface DocsViewerPage {
   src: string;
@@ -264,17 +265,6 @@ export class DocsViewer {
         $footer.classList.add(this.wrapClassName("float-footer"));
       }
 
-      if (this.pages.some(page => page.thumbnail || !page.src.startsWith("ppt"))) {
-        // const $btnSidebar = this.renderFooterBtn("btn-sidebar", sidebarSVG(this.namespace));
-        // this.sideEffect.addEventListener($btnSidebar, "click", () => {
-        //   if (this.readonly) {
-        //     return;
-        //   }
-        //   this.togglePreview();
-        // });
-        // this.$footer.appendChild($btnSidebar);
-      }
-
       const $pageJumps = document.createElement("div");
       $pageJumps.className = this.wrapClassName("page-jumps");
 
@@ -312,7 +302,9 @@ export class DocsViewer {
           returnPlay();
         });
 
-        this.$footer.appendChild($btnPlay);
+        if (!this.context.getIsAppReadonly() && !isIOS() && !isAndroid()) {
+          this.$footer.appendChild($btnPlay);
+        }
       }
       const $pageNumber = document.createElement("div");
       $pageNumber.className = this.wrapClassName("page-number");
@@ -320,21 +312,7 @@ export class DocsViewer {
       const $pageNumberInput = document.createElement("span");
       $pageNumberInput.className = this.wrapClassName("page-number-input");
       $pageNumberInput.textContent = String(this.pageIndex + 1);
-      // if (this.readonly) {
-      //   $pageNumberInput.disabled = true;
-      // }
       this.$pageNumberInput = $pageNumberInput;
-      // this.sideEffect.addEventListener($pageNumberInput, "focus", () => {
-      //   $pageNumberInput.select();
-      // });
-      // this.sideEffect.addEventListener($pageNumberInput, "change", () => {
-      //   if (this.readonly) {
-      //     return;
-      //   }
-      //   if ($pageNumberInput.value) {
-      //     this.onNewPageIndex(Number($pageNumberInput.value) - 1);
-      //   }
-      // });
 
       const $totalPage = document.createElement("span");
       $totalPage.textContent = " / " + this.pages.length;
@@ -354,7 +332,10 @@ export class DocsViewer {
       $pageJumps.appendChild($btnPageNext);
 
       this.$btnPageNext = $btnPageNext;
-      this.$footer.appendChild($pageJumps);
+
+      if (!this.context.getIsAppReadonly() && !isIOS() && !isAndroid()) {
+        this.$footer.appendChild($pageJumps);
+      }
     }
     return this.$footer;
   }

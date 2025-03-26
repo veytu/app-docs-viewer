@@ -17,6 +17,7 @@ var __spreadValues = (a, b) => {
   return a;
 };
 var __spreadProps = (a, b) => __defProps(a, __getOwnPropDescs(b));
+var _a;
 var styles = /* @__PURE__ */ (() => ".netless-app-docs-viewer-content{position:relative;height:100%;overflow:hidden}.netless-app-docs-viewer-preview-mask{display:block;position:absolute;z-index:200;top:0;left:0;width:100%;height:100%}.netless-app-docs-viewer-preview{display:flex;flex-direction:column;align-items:center;z-index:300;top:0;right:0;width:23%;padding:12px;box-shadow:-4.8px -3.2px 20px #20233826;transition:transform .4s;background:#f5f5fc;border-radius:4px;-webkit-box-shadow:-4.8px -3.2px 20px rgba(32,35,56,.15);height:100%;position:absolute}.netless-app-docs-viewer-preview-active .netless-app-docs-viewer-preview-mask{display:block}.netless-app-docs-viewer-preview-active .netless-app-docs-viewer-preview{transform:translate(0);opacity:1}.netless-app-docs-viewer-preview-head{display:flex;align-items:center;justify-content:space-between;width:100%;margin-bottom:10px}.netless-app-docs-viewer-preview-head>h3{color:#484c70;font-weight:400;font-size:14px;width:calc(100% - 20px);overflow:hidden;-o-text-overflow:ellipsis;text-overflow:ellipsis;white-space:nowrap}.netless-app-docs-viewer-preview-head .netless-app-docs-viewer-close{width:25px;height:25px;padding:0;outline:none;border:none;background:#fff;display:flex;justify-content:center;align-items:center;border-radius:100%;cursor:pointer}.netless-app-docs-viewer-preview-head .netless-app-docs-viewer-close button{width:22px;height:22px;padding:0;outline:none;border:none;background:center/cover no-repeat;background-image:url(./icons/close.svg)}.netless-app-docs-viewer-preview-page{position:relative;display:flex;width:100%;margin-bottom:10px;font-size:0;color:transparent;outline:none;border-radius:4px;transition:border-color .3s;user-select:none;align-items:flex-end}.netless-app-docs-viewer-preview-page>img{width:calc(90% - 10px);height:auto;box-sizing:border-box;border:2px solid rgba(0,0,0,.5);border-radius:2px;background-color:#fff}.netless-app-docs-viewer-preview-page>img.netless-app-docs-viewer-active{border-color:#ff5353}.netless-app-docs-viewer-preview-page-name{text-align:right;font-size:12px;color:#8d8fa6;user-select:none;margin-right:10px;width:5%}.netless-app-docs-viewer-footer{box-sizing:border-box;height:40px;display:flex;align-items:center;padding:0 16px;color:#191919;background:#ebecfa}.netless-app-docs-viewer-float-footer{width:100%;min-height:40px;position:absolute;left:0;bottom:0;z-index:2000;transition:opacity .4s;color:#191919}.netless-app-docs-viewer-footer-btn{box-sizing:border-box;width:26px;height:26px;font-size:0;margin:0;padding:3px;border:none;border-radius:4px;outline:none;color:currentColor;background:transparent;transition:background .4s;cursor:pointer;user-select:none;-webkit-tap-highlight-color:rgba(0,0,0,0);color:#8d8fa6}.netless-app-docs-viewer-footer-btn.netless-app-docs-viewer-footer-btn-disable{color:#c6c7d2;cursor:not-allowed}.netless-app-docs-viewer-footer-btn.netless-app-docs-viewer-footer-btn-disable .arrow{fill:#c6c7d2}.netless-app-docs-viewer-footer-btn .arrow{fill:#8d8fa6}.netless-app-docs-viewer-footer-btn:hover{background-color:#1b1f4d0a}@media (hover: none){.netless-app-docs-viewer-footer-btn:hover{background:transparent!important}}.netless-app-docs-viewer-footer-btn>svg{width:100%;height:100%}.netless-app-docs-viewer-footer-btn>svg:nth-of-type(2){display:none}.netless-app-docs-viewer-footer-btn.netless-app-docs-viewer-footer-btn-playing>svg:nth-of-type(1){display:none}.netless-app-docs-viewer-footer-btn.netless-app-docs-viewer-footer-btn-playing>svg:nth-of-type(2){display:initial}.netless-app-docs-viewer-hide{display:none}.netless-app-docs-viewer-page-jumps{flex:1;display:flex;justify-content:center;align-items:center;gap:8px}.netless-app-docs-viewer-page-number{font-size:14px;color:#8d8fa6;user-select:none;white-space:nowrap;word-break:keep-all}.netless-app-docs-viewer-page-number-input{border:none;outline:none;width:3em;margin:0;padding:0 2px;text-align:right;font-size:13px;line-height:1;font-weight:400;font-family:inherit;border-radius:2px;color:currentColor;background:transparent;transition:background .4s;user-select:text;-webkit-tap-highlight-color:rgba(0,0,0,0)}.netless-app-docs-viewer-readonly .netless-app-docs-viewer-footer-btn{cursor:not-allowed}.netless-app-docs-viewer-readonly .netless-app-docs-viewer-footer-btn:hover{background:transparent}.netless-app-docs-viewer-readonly .netless-app-docs-viewer-page-number-input{cursor:not-allowed}.netless-app-docs-viewer-readonly .netless-app-docs-viewer-page-number-input:hover,.netless-app-docs-viewer-readonly .netless-app-docs-viewer-page-number-input:focus,.netless-app-docs-viewer-readonly .netless-app-docs-viewer-page-number-input:active{background:transparent;box-shadow:none}.netless-app-docs-viewer-readonly .netless-app-docs-viewer-page-number-input:disabled{color:inherit}.netless-app-docs-viewer-readonly.netless-app-docs-viewer-float-footer{display:none}.telebox-color-scheme-dark .netless-app-docs-viewer-page-number-input{color:#a6a6a8}.telebox-color-scheme-dark .netless-app-docs-viewer-page-number-input:active,.telebox-color-scheme-dark .netless-app-docs-viewer-page-number-input:focus,.telebox-color-scheme-dark .netless-app-docs-viewer-page-number-input:hover{color:#222}.telebox-color-scheme-dark .netless-app-docs-viewer-footer{color:#a6a6a8;background:#2d2d33;border-top:none}.telebox-color-scheme-dark .netless-app-docs-viewer-footer-btn:hover{background:#212126}.telebox-color-scheme-dark .netless-app-docs-viewer-preview{background:rgba(50,50,50,.9)}.netless-app-docs-viewer-static-scrollbar{position:absolute;top:0;right:0;z-index:2147483647;width:8px;min-height:30px;margin:0;padding:0;border:none;outline:none;border-radius:4px;background:rgba(68,78,96,.4);box-shadow:1px 1px 8px #ffffffb3;opacity:0;transition:background .4s,opacity .4s 3s,transform .2s;user-select:none}.netless-app-docs-viewer-static-scrollbar.netless-app-docs-viewer-static-scrollbar-dragging{background:rgba(68,78,96,.6);opacity:1;transition:background .4s,opacity .4s 3s!important}.netless-app-docs-viewer-static-scrollbar:hover,.netless-app-docs-viewer-static-scrollbar:focus{background:rgba(68,78,96,.5)}.netless-app-docs-viewer-static-scrollbar:active{background:rgba(68,78,96,.6)}.netless-app-docs-viewer-content:hover .netless-app-docs-viewer-static-scrollbar{opacity:1;transition:background .4s,opacity .4s,transform .2s}.netless-app-docs-viewer-readonly .netless-app-docs-viewer-static-scrollbar{display:none}.netless-app-docs-viewer-static-pages:hover .netless-app-docs-viewer-static-scrollbar{opacity:1;transition:background .4s,opacity .4s,transform .2s}.page-renderer-pages-container{position:relative;overflow:hidden}.page-renderer-page{position:absolute;top:0;left:0;background-position:center;background-size:cover;background-repeat:no-repeat}.page-renderer-pages-container.is-hwa .page-renderer-page{will-change:transform}.page-renderer-page-img{display:block;width:100%;height:auto;user-select:none}.netless-app-docs-viewer-static-pages{overflow:hidden;position:relative;height:100%;user-select:none}.netless-app-docs-viewer-static-page{display:block;width:100%;height:auto;user-select:none}.netless-app-docs-viewer-static-wb-view,.netless-app-docs-viewer-dynamic-wb-view{position:absolute;top:0;left:0;width:100%;height:100%;z-index:100;overflow:auto}.netless-app-docs-viewer-dynamic-wb-view .cursor-clicker .ppt-event-source{cursor:pointer}\n")();
 const copyProperty = (to, from, property, ignoreNonConfigurable) => {
   if (property === "length" || property === "prototype") {
@@ -251,7 +252,7 @@ var DOMRectReadOnly = function() {
     return freeze(this);
   }
   DOMRectReadOnly2.prototype.toJSON = function() {
-    var _a = this, x = _a.x, y = _a.y, top = _a.top, right = _a.right, bottom = _a.bottom, left = _a.left, width = _a.width, height = _a.height;
+    var _a2 = this, x = _a2.x, y = _a2.y, top = _a2.top, right = _a2.right, bottom = _a2.bottom, left = _a2.left, width = _a2.width, height = _a2.height;
     return { x, y, top, right, bottom, left, width, height };
   };
   DOMRectReadOnly2.fromRect = function(rectangle) {
@@ -264,18 +265,18 @@ var isSVG = function(target) {
 };
 var isHidden = function(target) {
   if (isSVG(target)) {
-    var _a = target.getBBox(), width = _a.width, height = _a.height;
+    var _a2 = target.getBBox(), width = _a2.width, height = _a2.height;
     return !width && !height;
   }
   var _b = target, offsetWidth = _b.offsetWidth, offsetHeight = _b.offsetHeight;
   return !(offsetWidth || offsetHeight || target.getClientRects().length);
 };
 var isElement = function(obj) {
-  var _a, _b;
+  var _a2, _b;
   if (obj instanceof Element) {
     return true;
   }
-  var scope = (_b = (_a = obj) === null || _a === void 0 ? void 0 : _a.ownerDocument) === null || _b === void 0 ? void 0 : _b.defaultView;
+  var scope = (_b = (_a2 = obj) === null || _a2 === void 0 ? void 0 : _a2.ownerDocument) === null || _b === void 0 ? void 0 : _b.defaultView;
   return !!(scope && obj instanceof scope.Element);
 };
 var isReplacedElement = function(target) {
@@ -368,7 +369,7 @@ var calculateBoxSizes = function(target, forceRecalculation) {
   return boxes;
 };
 var calculateBoxSize = function(target, observedBox, forceRecalculation) {
-  var _a = calculateBoxSizes(target, forceRecalculation), borderBoxSize = _a.borderBoxSize, contentBoxSize = _a.contentBoxSize, devicePixelContentBoxSize = _a.devicePixelContentBoxSize;
+  var _a2 = calculateBoxSizes(target, forceRecalculation), borderBoxSize = _a2.borderBoxSize, contentBoxSize = _a2.contentBoxSize, devicePixelContentBoxSize = _a2.devicePixelContentBoxSize;
   switch (observedBox) {
     case ResizeObserverBoxOptions.DEVICE_PIXEL_CONTENT_BOX:
       return devicePixelContentBoxSize;
@@ -1427,6 +1428,14 @@ LazyLoad.resetStatus = (element) => {
 if (runningOnBrowser) {
   autoInitialize(LazyLoad, window.lazyLoadOptions);
 }
+const _ua = (_a = window.navigator) == null ? void 0 : _a.userAgent;
+_ua == null ? void 0 : _ua.match(/(Edge?)\/(\d+)/);
+const isIOS = () => {
+  return typeof navigator !== "undefined" && typeof window !== "undefined" && /iPad|iPhone|iPod/.test(_ua);
+};
+const isAndroid = () => {
+  return typeof navigator !== "undefined" && /Android/.test(_ua);
+};
 class DocsViewer {
   constructor({ context, readonly, box, pages, onNewPageIndex, onPlay }) {
     this.pageIndex = 0;
@@ -1480,11 +1489,11 @@ class DocsViewer {
     }
   }
   scrollPreview(pageIndex) {
-    var _a;
-    const previews = (_a = this.$preview) == null ? void 0 : _a.querySelectorAll("." + this.wrapClassName("preview-page"));
+    var _a2;
+    const previews = (_a2 = this.$preview) == null ? void 0 : _a2.querySelectorAll("." + this.wrapClassName("preview-page"));
     previews == null ? void 0 : previews.forEach((node, i) => {
-      var _a2;
-      (_a2 = node.querySelector("img")) == null ? void 0 : _a2.classList.toggle(this.wrapClassName("active"), Number(pageIndex) == i);
+      var _a3;
+      (_a3 = node.querySelector("img")) == null ? void 0 : _a3.classList.toggle(this.wrapClassName("active"), Number(pageIndex) == i);
     });
     if (!previews)
       return;
@@ -1537,8 +1546,8 @@ class DocsViewer {
       const pageClassName = this.wrapClassName("preview-page");
       const pageNameClassName = this.wrapClassName("preview-page-name");
       this.pages.forEach((page, i) => {
-        var _a;
-        const previewSRC = (_a = page.thumbnail) != null ? _a : page.src.startsWith("ppt") ? void 0 : page.src;
+        var _a2;
+        const previewSRC = (_a2 = page.thumbnail) != null ? _a2 : page.src.startsWith("ppt") ? void 0 : page.src;
         if (!previewSRC) {
           return;
         }
@@ -1562,11 +1571,11 @@ class DocsViewer {
         $img.classList.toggle(this.wrapClassName("active"), this.pageIndex == i);
       });
       this.sideEffect.addEventListener($preview, "click", (ev) => {
-        var _a;
+        var _a2;
         if (this.readonly) {
           return;
         }
-        const pageIndex = (_a = ev.target.dataset) == null ? void 0 : _a.pageIndex;
+        const pageIndex = (_a2 = ev.target.dataset) == null ? void 0 : _a2.pageIndex;
         if (pageIndex) {
           ev.preventDefault();
           ev.stopPropagation();
@@ -1603,8 +1612,6 @@ class DocsViewer {
       if (this.isSmallBox) {
         $footer.classList.add(this.wrapClassName("float-footer"));
       }
-      if (this.pages.some((page) => page.thumbnail || !page.src.startsWith("ppt")))
-        ;
       const $pageJumps = document.createElement("div");
       $pageJumps.className = this.wrapClassName("page-jumps");
       const $btnPageBack = this.renderFooterBtn("btn-page-back", arrowLeftSVG(this.namespace));
@@ -1624,15 +1631,17 @@ class DocsViewer {
           }, 500, "returnPlay");
         };
         this.sideEffect.addEventListener($btnPlay, "click", () => {
-          var _a;
+          var _a2;
           if (this.readonly) {
             return;
           }
           $btnPlay.classList.toggle(this.wrapClassName("footer-btn-playing"), true);
-          (_a = this.onPlay) == null ? void 0 : _a.call(this);
+          (_a2 = this.onPlay) == null ? void 0 : _a2.call(this);
           returnPlay();
         });
-        this.$footer.appendChild($btnPlay);
+        if (!this.context.getIsAppReadonly() && !isIOS() && !isAndroid()) {
+          this.$footer.appendChild($btnPlay);
+        }
       }
       const $pageNumber = document.createElement("div");
       $pageNumber.className = this.wrapClassName("page-number");
@@ -1654,7 +1663,9 @@ class DocsViewer {
       });
       $pageJumps.appendChild($btnPageNext);
       this.$btnPageNext = $btnPageNext;
-      this.$footer.appendChild($pageJumps);
+      if (!this.context.getIsAppReadonly() && !isIOS() && !isAndroid()) {
+        this.$footer.appendChild($pageJumps);
+      }
     }
     return this.$footer;
   }
@@ -1668,9 +1679,9 @@ class DocsViewer {
     return $btn;
   }
   togglePreview(isShowPreview) {
-    var _a, _b, _c, _d, _e, _f, _g;
+    var _a2, _b, _c, _d, _e, _f, _g;
     this.isShowPreview = isShowPreview != null ? isShowPreview : !this.isShowPreview;
-    console.log((_a = this.context) == null ? void 0 : _a.extendWrapper);
+    console.log((_a2 = this.context) == null ? void 0 : _a2.extendWrapper);
     this.$content.classList.toggle(this.wrapClassName("preview-active"), this.isShowPreview);
     if (this.isShowPreview) {
       if ((_b = this.context) == null ? void 0 : _b.extendWrapper) {
@@ -1729,7 +1740,7 @@ function isEditable(el) {
 }
 class Stepper {
   constructor(config) {
-    var _a, _b, _c;
+    var _a2, _b, _c;
     this.velocity = 0;
     this.paused = true;
     this._animationFrameID = null;
@@ -1748,7 +1759,7 @@ class Stepper {
         window.requestAnimationFrame(this.looper);
       }
     };
-    this.current = (_a = config.start) != null ? _a : 0;
+    this.current = (_a2 = config.start) != null ? _a2 : 0;
     this.target = this.current;
     this.stiffness = (_b = config.stiffness) != null ? _b : 170;
     this.damping = (_c = config.damping) != null ? _c : 26;
@@ -2638,12 +2649,12 @@ class DynamicDocsViewer {
     return this.displayer.state.sceneState.index;
   }
   jumpToPage(index, reset) {
-    var _a, _b;
+    var _a2, _b;
     index = clamp(index, 0, this.pages.length - 1);
     if (index !== this.getPageIndex()) {
       if (this.context.getIsWritable()) {
         const initScenePath = this.context.getInitScenePath();
-        const scene = (_b = (_a = this.context.getScenes()) == null ? void 0 : _a[index]) == null ? void 0 : _b.name;
+        const scene = (_b = (_a2 = this.context.getScenes()) == null ? void 0 : _a2[index]) == null ? void 0 : _b.name;
         if (initScenePath && scene) {
           this.context.setScenePath(`${initScenePath}/${scene}`);
         }
@@ -2671,7 +2682,7 @@ class DynamicDocsViewer {
     this.viewer.$content.appendChild(this.renderMask());
     this.viewer.$content.appendChild(this.renderWhiteboardView());
     this.sideEffect.addEventListener(window, "keydown", (ev) => {
-      var _a;
+      var _a2;
       if (this.box.focus && !isEditable(ev.target)) {
         switch (ev.key) {
           case "ArrowUp":
@@ -2681,7 +2692,7 @@ class DynamicDocsViewer {
           }
           case "ArrowRight":
           case "ArrowDown": {
-            (_a = this.context.getRoom()) == null ? void 0 : _a.pptNextStep();
+            (_a2 = this.context.getRoom()) == null ? void 0 : _a2.pptNextStep();
             break;
           }
         }
@@ -2705,11 +2716,11 @@ class DynamicDocsViewer {
       this.$whiteboardView = document.createElement("div");
       this.$whiteboardView.className = this.wrapClassName("wb-view");
       this.sideEffect.addEventListener(this.$whiteboardView, "click", (ev) => {
-        var _a;
+        var _a2;
         const room = this.context.getRoom();
         if (room && room.state.memberState.currentApplianceName === "clicker") {
           for (let el = ev.target; el; el = el.parentElement) {
-            if ((_a = el.classList) == null ? void 0 : _a.contains("ppt-event-source")) {
+            if ((_a2 = el.classList) == null ? void 0 : _a2.contains("ppt-event-source")) {
               return;
             }
           }
@@ -2756,7 +2767,7 @@ const NetlessAppDocsViewer = {
   }
 };
 function setupStaticDocsViewer(context, whiteboardView, box, pages) {
-  var _a;
+  var _a2;
   whiteboardView.disableCameraTransform = !context.getIsWritable();
   const docsViewer = new StaticDocsViewer({
     context,
@@ -2764,11 +2775,11 @@ function setupStaticDocsViewer(context, whiteboardView, box, pages) {
     readonly: !context.getIsWritable(),
     box,
     pages,
-    pageScrollTop: (_a = context.getAttributes()) == null ? void 0 : _a.pageScrollTop,
+    pageScrollTop: (_a2 = context.getAttributes()) == null ? void 0 : _a2.pageScrollTop,
     mountWhiteboard: context.mountView.bind(context),
     onUserScroll: (pageScrollTop) => {
-      var _a2;
-      if (((_a2 = context.getAttributes()) == null ? void 0 : _a2.pageScrollTop) !== pageScrollTop && !box.readonly) {
+      var _a3;
+      if (((_a3 = context.getAttributes()) == null ? void 0 : _a3.pageScrollTop) !== pageScrollTop && !box.readonly) {
         context.updateAttributes(["pageScrollTop"], pageScrollTop);
       }
     },
