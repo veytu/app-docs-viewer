@@ -49,7 +49,7 @@ const NetlessAppDocsViewer: NetlessApp<
     }
 
     const whiteboardView = context.getView();
-    console.log(context.storage.state);
+
     if (!whiteboardView) {
       throw new Error("[Docs Viewer]: no whiteboard view.");
     }

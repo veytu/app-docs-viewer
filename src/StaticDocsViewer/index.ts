@@ -219,7 +219,7 @@ export class StaticDocsViewer {
   }
 
   protected renderRatioHeight(): void {
-    const boxHeight = this.box.absoluteHeight;
+    const boxHeight = Math.round(this.box.absoluteHeight);
     const isSmallBox = boxHeight <= RATIO_BASE_CONTAINER_HEIGHT;
 
     this.viewer.setSmallBox(isSmallBox);
