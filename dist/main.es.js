@@ -1,24 +1,5 @@
-var __defProp = Object.defineProperty;
-var __defProps = Object.defineProperties;
-var __getOwnPropDescs = Object.getOwnPropertyDescriptors;
-var __getOwnPropSymbols = Object.getOwnPropertySymbols;
-var __hasOwnProp = Object.prototype.hasOwnProperty;
-var __propIsEnum = Object.prototype.propertyIsEnumerable;
-var __defNormalProp = (obj, key, value) => key in obj ? __defProp(obj, key, { enumerable: true, configurable: true, writable: true, value }) : obj[key] = value;
-var __spreadValues = (a, b) => {
-  for (var prop in b || (b = {}))
-    if (__hasOwnProp.call(b, prop))
-      __defNormalProp(a, prop, b[prop]);
-  if (__getOwnPropSymbols)
-    for (var prop of __getOwnPropSymbols(b)) {
-      if (__propIsEnum.call(b, prop))
-        __defNormalProp(a, prop, b[prop]);
-    }
-  return a;
-};
-var __spreadProps = (a, b) => __defProps(a, __getOwnPropDescs(b));
 var _a;
-var styles = /* @__PURE__ */ (() => ".netless-app-docs-viewer-content{position:relative;height:100%;overflow:hidden}.netless-app-docs-viewer-preview-mask{display:block;position:absolute;z-index:200;top:0;left:0;width:100%;height:100%}.netless-app-docs-viewer-preview{display:flex;flex-direction:column;align-items:center;z-index:300;top:0;right:0;width:23%;padding:12px;box-shadow:-4.8px -3.2px 20px #20233826;transition:transform .4s;background:#f5f5fc;border-radius:4px;-webkit-box-shadow:-4.8px -3.2px 20px rgba(32,35,56,.15);height:100%;position:absolute}.netless-app-docs-viewer-preview-active .netless-app-docs-viewer-preview-mask{display:block}.netless-app-docs-viewer-preview-active .netless-app-docs-viewer-preview{transform:translate(0);opacity:1}.netless-app-docs-viewer-preview-head{display:flex;align-items:center;justify-content:space-between;width:100%;margin-bottom:10px}.netless-app-docs-viewer-preview-head>h3{color:#484c70;font-weight:400;font-size:14px;width:calc(100% - 20px);overflow:hidden;-o-text-overflow:ellipsis;text-overflow:ellipsis;white-space:nowrap}.netless-app-docs-viewer-preview-head .netless-app-docs-viewer-close{width:25px;height:25px;padding:0;outline:none;border:none;background:#fff;display:flex;justify-content:center;align-items:center;border-radius:100%;cursor:pointer}.netless-app-docs-viewer-preview-head .netless-app-docs-viewer-close button{width:22px;height:22px;padding:0;outline:none;border:none;background:center/cover no-repeat;background-image:url(./icons/close.svg)}.netless-app-docs-viewer-preview-page{position:relative;display:flex;width:100%;margin-bottom:10px;font-size:0;color:transparent;outline:none;border-radius:4px;transition:border-color .3s;user-select:none;align-items:flex-end}.netless-app-docs-viewer-preview-page>img{width:calc(90% - 10px);height:auto;box-sizing:border-box;border:2px solid rgba(0,0,0,.5);border-radius:2px;background-color:#fff}.netless-app-docs-viewer-preview-page>img.netless-app-docs-viewer-active{border-color:#ff5353}.netless-app-docs-viewer-preview-page-name{text-align:right;font-size:12px;color:#8d8fa6;user-select:none;margin-right:10px;width:5%}.netless-app-docs-viewer-footer{box-sizing:border-box;height:2.778vw;display:flex;align-items:center;padding:0 1.11vw;color:#191919;background:#ebecfa}.netless-app-docs-viewer-float-footer{width:100%;min-height:2.778vw;position:absolute;left:0;bottom:0;z-index:2000;transition:opacity .4s;color:#191919}.netless-app-docs-viewer-footer-btn{box-sizing:border-box;width:1.81vw;height:1.81vw;font-size:0;margin:0;padding:3px;border:none;border-radius:4px;outline:none;color:currentColor;background:transparent;transition:background .4s;cursor:pointer;user-select:none;-webkit-tap-highlight-color:rgba(0,0,0,0);color:#8d8fa6}.netless-app-docs-viewer-footer-btn.netless-app-docs-viewer-footer-btn-disable{color:#c6c7d2;cursor:not-allowed}.netless-app-docs-viewer-footer-btn.netless-app-docs-viewer-footer-btn-disable .arrow{fill:#c6c7d2}.netless-app-docs-viewer-footer-btn .arrow{fill:#8d8fa6}.netless-app-docs-viewer-footer-btn:hover{background-color:#1b1f4d0a}@media (hover: none){.netless-app-docs-viewer-footer-btn:hover{background:transparent!important}}.netless-app-docs-viewer-footer-btn>svg{width:100%;height:100%}.netless-app-docs-viewer-footer-btn>svg:nth-of-type(2){display:none}.netless-app-docs-viewer-footer-btn.netless-app-docs-viewer-footer-btn-playing>svg:nth-of-type(1){display:none}.netless-app-docs-viewer-footer-btn.netless-app-docs-viewer-footer-btn-playing>svg:nth-of-type(2){display:initial}.netless-app-docs-viewer-hide{display:none}.netless-app-docs-viewer-page-jumps{flex:1;display:flex;justify-content:center;align-items:center;gap:.556vw}.netless-app-docs-viewer-page-number{font-size:1vw;color:#8d8fa6;user-select:none;white-space:nowrap;word-break:keep-all}.netless-app-docs-viewer-page-number-input{border:none;outline:none;width:3em;margin:0;padding:0 2px;text-align:right;font-size:1vw;line-height:1;font-weight:400;font-family:inherit;border-radius:2px;color:currentColor;background:transparent;transition:background .4s;user-select:text;-webkit-tap-highlight-color:rgba(0,0,0,0)}.netless-app-docs-viewer-readonly .netless-app-docs-viewer-footer-btn{cursor:not-allowed}.netless-app-docs-viewer-readonly .netless-app-docs-viewer-footer-btn:hover{background:transparent}.netless-app-docs-viewer-readonly .netless-app-docs-viewer-page-number-input{cursor:not-allowed}.netless-app-docs-viewer-readonly .netless-app-docs-viewer-page-number-input:hover,.netless-app-docs-viewer-readonly .netless-app-docs-viewer-page-number-input:focus,.netless-app-docs-viewer-readonly .netless-app-docs-viewer-page-number-input:active{background:transparent;box-shadow:none}.netless-app-docs-viewer-readonly .netless-app-docs-viewer-page-number-input:disabled{color:inherit}.netless-app-docs-viewer-readonly.netless-app-docs-viewer-float-footer{display:none}.telebox-color-scheme-dark .netless-app-docs-viewer-page-number-input{color:#a6a6a8}.telebox-color-scheme-dark .netless-app-docs-viewer-page-number-input:active,.telebox-color-scheme-dark .netless-app-docs-viewer-page-number-input:focus,.telebox-color-scheme-dark .netless-app-docs-viewer-page-number-input:hover{color:#222}.telebox-color-scheme-dark .netless-app-docs-viewer-footer{color:#a6a6a8;background:#2d2d33;border-top:none}.telebox-color-scheme-dark .netless-app-docs-viewer-footer-btn:hover{background:#212126}.telebox-color-scheme-dark .netless-app-docs-viewer-preview{background:rgba(50,50,50,.9)}.netless-app-docs-viewer-static-scrollbar{position:absolute;top:0;right:0;z-index:2147483647;width:8px;min-height:30px;margin:0;padding:0;border:none;outline:none;border-radius:4px;background:rgba(68,78,96,.4);box-shadow:1px 1px 8px #ffffffb3;opacity:0;transition:background .4s,opacity .4s 3s,transform .2s;user-select:none}.netless-app-docs-viewer-static-scrollbar.netless-app-docs-viewer-static-scrollbar-dragging{background:rgba(68,78,96,.6);opacity:1;transition:background .4s,opacity .4s 3s!important}.netless-app-docs-viewer-static-scrollbar:hover,.netless-app-docs-viewer-static-scrollbar:focus{background:rgba(68,78,96,.5)}.netless-app-docs-viewer-static-scrollbar:active{background:rgba(68,78,96,.6)}.netless-app-docs-viewer-content:hover .netless-app-docs-viewer-static-scrollbar{opacity:1;transition:background .4s,opacity .4s,transform .2s}.netless-app-docs-viewer-readonly .netless-app-docs-viewer-static-scrollbar{display:none}.netless-app-docs-viewer-static-pages:hover .netless-app-docs-viewer-static-scrollbar{opacity:1;transition:background .4s,opacity .4s,transform .2s}.page-renderer-pages-container{position:relative;overflow:hidden}.page-renderer-page{position:absolute;top:0;left:0;background-position:center;background-size:cover;background-repeat:no-repeat}.page-renderer-pages-container.is-hwa .page-renderer-page{will-change:transform}.page-renderer-page-img{display:block;width:100%;height:auto;user-select:none}.netless-app-docs-viewer-static-pages{overflow:hidden;position:relative;height:100%;user-select:none}.netless-app-docs-viewer-static-page{display:block;width:100%;height:auto;user-select:none}.netless-app-docs-viewer-static-wb-view,.netless-app-docs-viewer-dynamic-wb-view{position:absolute;top:0;left:0;width:100%;height:100%;z-index:100;overflow:auto}.netless-app-docs-viewer-dynamic-wb-view .cursor-clicker .ppt-event-source{cursor:pointer}\n")();
+var styles = ".netless-app-docs-viewer-content{position:relative;height:100%;overflow:hidden}.netless-app-docs-viewer-preview-mask{display:block;position:absolute;z-index:200;top:0;left:0;width:100%;height:100%}.netless-app-docs-viewer-preview{display:flex;flex-direction:column;align-items:center;z-index:300;top:0;right:0;width:23%;padding:12px;box-shadow:-4.8px -3.2px 20px #20233826;transition:transform .4s;background:#f5f5fc;border-radius:4px;-webkit-box-shadow:-4.8px -3.2px 20px rgba(32,35,56,.15);height:100%;position:absolute}.netless-app-docs-viewer-preview-active .netless-app-docs-viewer-preview-mask{display:block}.netless-app-docs-viewer-preview-active .netless-app-docs-viewer-preview{transform:translate(0);opacity:1}.netless-app-docs-viewer-preview-head{display:flex;align-items:center;justify-content:space-between;width:100%;margin-bottom:10px}.netless-app-docs-viewer-preview-head>h3{color:#484c70;font-weight:400;font-size:14px;width:calc(100% - 20px);overflow:hidden;-o-text-overflow:ellipsis;text-overflow:ellipsis;white-space:nowrap}.netless-app-docs-viewer-preview-head .netless-app-docs-viewer-close{width:25px;height:25px;padding:0;outline:none;border:none;background:#fff;display:flex;justify-content:center;align-items:center;border-radius:100%;cursor:pointer}.netless-app-docs-viewer-preview-head .netless-app-docs-viewer-close button{width:22px;height:22px;padding:0;outline:none;border:none;background:center/cover no-repeat;background-image:url(./icons/close.svg)}.netless-app-docs-viewer-preview-page{position:relative;display:flex;width:100%;margin-bottom:10px;font-size:0;color:transparent;outline:none;border-radius:4px;transition:border-color .3s;user-select:none;align-items:flex-end}.netless-app-docs-viewer-preview-page>img{width:calc(90% - 10px);height:auto;box-sizing:border-box;border:2px solid rgba(0,0,0,.5);border-radius:2px;background-color:#fff}.netless-app-docs-viewer-preview-page>img.netless-app-docs-viewer-active{border-color:#ff5353}.netless-app-docs-viewer-preview-page-name{text-align:right;font-size:12px;color:#8d8fa6;user-select:none;margin-right:10px;width:5%}.netless-app-docs-viewer-footer{box-sizing:border-box;height:2.778vw;display:flex;align-items:center;padding:0 1.11vw;color:#191919;background:#ebecfa}.netless-app-docs-viewer-float-footer{width:100%;min-height:2.778vw;position:absolute;left:0;bottom:0;z-index:2000;transition:opacity .4s;color:#191919}.netless-app-docs-viewer-footer-btn{box-sizing:border-box;width:1.81vw;height:1.81vw;font-size:0;margin:0;padding:3px;border:none;border-radius:4px;outline:none;color:currentColor;background:transparent;transition:background .4s;cursor:pointer;user-select:none;-webkit-tap-highlight-color:rgba(0,0,0,0);color:#8d8fa6}.netless-app-docs-viewer-footer-btn.netless-app-docs-viewer-footer-btn-disable{color:#c6c7d2;cursor:not-allowed}.netless-app-docs-viewer-footer-btn.netless-app-docs-viewer-footer-btn-disable .arrow{fill:#c6c7d2}.netless-app-docs-viewer-footer-btn .arrow{fill:#8d8fa6}.netless-app-docs-viewer-footer-btn:hover{background-color:#1b1f4d0a}@media (hover: none){.netless-app-docs-viewer-footer-btn:hover{background:transparent!important}}.netless-app-docs-viewer-footer-btn>svg{width:100%;height:100%}.netless-app-docs-viewer-footer-btn>svg:nth-of-type(2){display:none}.netless-app-docs-viewer-footer-btn.netless-app-docs-viewer-footer-btn-playing>svg:nth-of-type(1){display:none}.netless-app-docs-viewer-footer-btn.netless-app-docs-viewer-footer-btn-playing>svg:nth-of-type(2){display:initial}.netless-app-docs-viewer-hide{display:none}.netless-app-docs-viewer-page-jumps{flex:1;display:flex;justify-content:center;align-items:center;gap:.556vw}.netless-app-docs-viewer-page-number{font-size:1vw;color:#8d8fa6;user-select:none;white-space:nowrap;word-break:keep-all}.netless-app-docs-viewer-page-number-input{border:none;outline:none;width:3em;margin:0;padding:0 2px;text-align:right;font-size:1vw;line-height:1;font-weight:400;font-family:inherit;border-radius:2px;color:currentColor;background:transparent;transition:background .4s;user-select:text;-webkit-tap-highlight-color:rgba(0,0,0,0)}.netless-app-docs-viewer-readonly .netless-app-docs-viewer-footer-btn{cursor:not-allowed}.netless-app-docs-viewer-readonly .netless-app-docs-viewer-footer-btn:hover{background:transparent}.netless-app-docs-viewer-readonly .netless-app-docs-viewer-page-number-input{cursor:not-allowed}.netless-app-docs-viewer-readonly .netless-app-docs-viewer-page-number-input:hover,.netless-app-docs-viewer-readonly .netless-app-docs-viewer-page-number-input:focus,.netless-app-docs-viewer-readonly .netless-app-docs-viewer-page-number-input:active{background:transparent;box-shadow:none}.netless-app-docs-viewer-readonly .netless-app-docs-viewer-page-number-input:disabled{color:inherit}.netless-app-docs-viewer-readonly.netless-app-docs-viewer-float-footer{display:none}.telebox-color-scheme-dark .netless-app-docs-viewer-page-number-input{color:#a6a6a8}.telebox-color-scheme-dark .netless-app-docs-viewer-page-number-input:active,.telebox-color-scheme-dark .netless-app-docs-viewer-page-number-input:focus,.telebox-color-scheme-dark .netless-app-docs-viewer-page-number-input:hover{color:#222}.telebox-color-scheme-dark .netless-app-docs-viewer-footer{color:#a6a6a8;background:#2d2d33;border-top:none}.telebox-color-scheme-dark .netless-app-docs-viewer-footer-btn:hover{background:#212126}.telebox-color-scheme-dark .netless-app-docs-viewer-preview{background:rgba(50,50,50,.9)}.netless-app-docs-viewer-static-scrollbar{position:absolute;top:0;right:0;z-index:2147483647;width:8px;min-height:30px;margin:0;padding:0;border:none;outline:none;border-radius:4px;background:rgba(68,78,96,.4);box-shadow:1px 1px 8px #ffffffb3;opacity:0;transition:background .4s,opacity .4s 3s,transform .2s;user-select:none}.netless-app-docs-viewer-static-scrollbar.netless-app-docs-viewer-static-scrollbar-dragging{background:rgba(68,78,96,.6);opacity:1;transition:background .4s,opacity .4s 3s!important}.netless-app-docs-viewer-static-scrollbar:hover,.netless-app-docs-viewer-static-scrollbar:focus{background:rgba(68,78,96,.5)}.netless-app-docs-viewer-static-scrollbar:active{background:rgba(68,78,96,.6)}.netless-app-docs-viewer-content:hover .netless-app-docs-viewer-static-scrollbar{opacity:1;transition:background .4s,opacity .4s,transform .2s}.netless-app-docs-viewer-readonly .netless-app-docs-viewer-static-scrollbar{display:none}.netless-app-docs-viewer-static-pages:hover .netless-app-docs-viewer-static-scrollbar{opacity:1;transition:background .4s,opacity .4s,transform .2s}.page-renderer-pages-container{position:relative;overflow:hidden}.page-renderer-page{position:absolute;top:0;left:0;background-position:center;background-size:cover;background-repeat:no-repeat}.page-renderer-pages-container.is-hwa .page-renderer-page{will-change:transform}.page-renderer-page-img{display:block;width:100%;height:auto;user-select:none}.netless-app-docs-viewer-static-pages{overflow:hidden;position:relative;height:100%;user-select:none}.netless-app-docs-viewer-static-page{display:block;width:100%;height:auto;user-select:none}.netless-app-docs-viewer-static-wb-view,.netless-app-docs-viewer-dynamic-wb-view{position:absolute;top:0;left:0;width:100%;height:100%;z-index:100;overflow:auto}.netless-app-docs-viewer-dynamic-wb-view .cursor-clicker .ppt-event-source{cursor:pointer}\n";
 const copyProperty = (to, from, property, ignoreNonConfigurable) => {
   if (property === "length" || property === "prototype") {
     return;
@@ -51,7 +32,7 @@ const changeToString = (to, from, name) => {
   const withName = name === "" ? "" : `with ${name.trim()}() `;
   const newToString = wrappedToString.bind(null, withName, from.toString());
   Object.defineProperty(newToString, "name", toStringName);
-  Object.defineProperty(to, "toString", __spreadProps(__spreadValues({}, toStringDescriptor), { value: newToString }));
+  Object.defineProperty(to, "toString", { ...toStringDescriptor, value: newToString });
 };
 function mimicFunction(to, from, { ignoreNonConfigurable = false } = {}) {
   const { name } = to;
@@ -68,7 +49,7 @@ const debounceFn = (inputFunction, options = {}) => {
   }
   const {
     wait = 0,
-    maxWait = Number.Infinity,
+    maxWait = Number.POSITIVE_INFINITY,
     before = false,
     after = true
   } = options;
@@ -103,7 +84,7 @@ const debounceFn = (inputFunction, options = {}) => {
     const shouldCallNow = before && !timeout;
     clearTimeout(timeout);
     timeout = setTimeout(later, wait);
-    if (maxWait > 0 && maxWait !== Number.Infinity && !maxTimeout) {
+    if (maxWait > 0 && maxWait !== Number.POSITIVE_INFINITY && !maxTimeout) {
       maxTimeout = setTimeout(maxLater, maxWait);
     }
     if (shouldCallNow) {
@@ -124,11 +105,11 @@ const debounceFn = (inputFunction, options = {}) => {
   };
   return debouncedFunction;
 };
-const SOUP = "!#%()*+,-./:;=?@[]^_`{|}~ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
-const SOUP_LEN = 87;
-const ID_LEN = 20;
-const reusedIdCarrier = [];
-const genUID = () => {
+var SOUP = "!#%()*+,-./:;=?@[]^_`{|}~ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+var SOUP_LEN = 87;
+var ID_LEN = 20;
+var reusedIdCarrier = [];
+var genUID = () => {
   for (let i = 0; i < ID_LEN; i++) {
     reusedIdCarrier[i] = SOUP.charAt(Math.random() * SOUP_LEN);
   }
@@ -141,14 +122,17 @@ function invoke(fn) {
     console.error(e);
   }
 }
-class SideEffectManager {
+var SideEffectManager = class {
   constructor() {
     this.push = this.addDisposer;
     this.disposers = /* @__PURE__ */ new Map();
   }
   addDisposer(disposer, disposerID = this.genUID()) {
     this.flush(disposerID);
-    this.disposers.set(disposerID, Array.isArray(disposer) ? joinDisposers(disposer) : disposer);
+    this.disposers.set(
+      disposerID,
+      Array.isArray(disposer) ? joinDisposers(disposer) : disposer
+    );
     return disposerID;
   }
   add(executor, disposerID = this.genUID()) {
@@ -157,7 +141,10 @@ class SideEffectManager {
   }
   addEventListener(el, type, listener, options, disposerID = this.genUID()) {
     el.addEventListener(type, listener, options);
-    this.addDisposer(() => el.removeEventListener(type, listener, options), disposerID);
+    this.addDisposer(
+      () => el.removeEventListener(type, listener, options),
+      disposerID
+    );
     return disposerID;
   }
   setTimeout(handler, timeout, disposerID = this.genUID()) {
@@ -193,7 +180,7 @@ class SideEffectManager {
     } while (this.disposers.has(uid));
     return uid;
   }
-}
+};
 function joinDisposers(disposers) {
   return () => disposers.forEach(invoke);
 }
@@ -272,11 +259,11 @@ var isHidden = function(target) {
   return !(offsetWidth || offsetHeight || target.getClientRects().length);
 };
 var isElement = function(obj) {
-  var _a2, _b;
+  var _a2;
   if (obj instanceof Element) {
     return true;
   }
-  var scope = (_b = (_a2 = obj) === null || _a2 === void 0 ? void 0 : _a2.ownerDocument) === null || _b === void 0 ? void 0 : _b.defaultView;
+  var scope = (_a2 = obj === null || obj === void 0 ? void 0 : obj.ownerDocument) === null || _a2 === void 0 ? void 0 : _a2.defaultView;
   return !!(scope && obj instanceof scope.Element);
 };
 var isReplacedElement = function(target) {
@@ -473,7 +460,7 @@ var queueMicroTask = function(callback) {
       return notify();
     }).observe(el_1, config);
     trigger = function() {
-      el_1.textContent = "" + (toggle_1 ? toggle_1-- : toggle_1++);
+      el_1.textContent = "".concat(toggle_1 ? toggle_1-- : toggle_1++);
     };
   }
   callbacks.push(callback);
@@ -744,7 +731,10 @@ function playSVG(namespace) {
   $svg.setAttribute("viewBox", "0 0 500 500");
   const $path = document.createElementNS(NS, "path");
   $path.setAttribute("fill", "currentColor");
-  $path.setAttribute("d", "M418.158 257.419L174.663 413.33c-6.017 3.919-15.708 3.772-21.291-.29-2.791-2.018-4.295-4.483-4.295-7.084V94.109c0-5.65 6.883-10.289 15.271-10.289 4.298 0 8.391 1.307 11.181 3.332l242.629 155.484c6.016 3.917 6.451 10.292.649 14.491-.216.154-.432.154-.649.292zM170.621 391.288l223.116-141.301L170.71 107.753l-.089 283.535z");
+  $path.setAttribute(
+    "d",
+    "M418.158 257.419L174.663 413.33c-6.017 3.919-15.708 3.772-21.291-.29-2.791-2.018-4.295-4.483-4.295-7.084V94.109c0-5.65 6.883-10.289 15.271-10.289 4.298 0 8.391 1.307 11.181 3.332l242.629 155.484c6.016 3.917 6.451 10.292.649 14.491-.216.154-.432.154-.649.292zM170.621 391.288l223.116-141.301L170.71 107.753l-.089 283.535z"
+  );
   $svg.appendChild($path);
   return $svg;
 }
@@ -755,7 +745,10 @@ function pauseSVG(namespace) {
   $svg.setAttribute("viewBox", "0 0 500 500");
   const $path = document.createElementNS(NS, "path");
   $path.setAttribute("fill", "currentColor");
-  $path.setAttribute("d", "M312.491 78.261c0-6.159 4.893-11.213 11.04-11.213 6.158 0 11.211 5.054 11.211 11.213v343.478c0 6.159-5.053 11.213-11.211 11.213-6.147 0-11.04-5.054-11.04-11.213V78.261zM165.257 78.261c0-6.159 4.893-11.213 11.04-11.213 6.158 0 11.211 5.054 11.211 11.213v343.478c0 6.159-5.053 11.213-11.211 11.213-6.147 0-11.04-5.054-11.04-11.213V78.261z");
+  $path.setAttribute(
+    "d",
+    "M312.491 78.261c0-6.159 4.893-11.213 11.04-11.213 6.158 0 11.211 5.054 11.211 11.213v343.478c0 6.159-5.053 11.213-11.211 11.213-6.147 0-11.04-5.054-11.04-11.213V78.261zM165.257 78.261c0-6.159 4.893-11.213 11.04-11.213 6.158 0 11.211 5.054 11.211 11.213v343.478c0 6.159-5.053 11.213-11.211 11.213-6.147 0-11.04-5.054-11.04-11.213V78.261z"
+  );
   $svg.appendChild($path);
   return $svg;
 }
@@ -843,7 +836,7 @@ const getData = (element, attribute) => {
   return element.getAttribute(dataPrefix + attribute);
 };
 const setData = (element, attribute, value) => {
-  var attrName = dataPrefix + attribute;
+  const attrName = dataPrefix + attribute;
   if (value === null) {
     element.removeAttribute(attrName);
     return;
@@ -860,7 +853,7 @@ const hasStatusNative = (element) => getStatus(element) === statusNative;
 const statusesAfterLoading = [statusLoading, statusLoaded, statusApplied, statusError];
 const hadStartedLoading = (element) => statusesAfterLoading.indexOf(getStatus(element)) >= 0;
 const safeCallback = (callback, arg1, arg2, arg3) => {
-  if (!callback) {
+  if (!callback || typeof callback !== "function") {
     return;
   }
   if (arg3 !== void 0) {
@@ -874,6 +867,9 @@ const safeCallback = (callback, arg1, arg2, arg3) => {
   callback(arg1);
 };
 const addClass = (element, className) => {
+  if (className === "") {
+    return;
+  }
   if (supportsClassList) {
     element.classList.add(className);
     return;
@@ -881,6 +877,9 @@ const addClass = (element, className) => {
   element.className += (element.className ? " " : "") + className;
 };
 const removeClass = (element, className) => {
+  if (className === "") {
+    return;
+  }
   if (supportsClassList) {
     element.classList.remove(className);
     return;
@@ -1318,7 +1317,9 @@ const getObserverSettings = (settings) => ({
   rootMargin: settings.thresholds || settings.threshold + "px"
 });
 const intersectionHandler = (entries, settings, instance) => {
-  entries.forEach((entry) => isIntersecting(entry) ? onEnter(entry.target, entry, settings, instance) : onExit(entry.target, entry, settings, instance));
+  entries.forEach(
+    (entry) => isIntersecting(entry) ? onEnter(entry.target, entry, settings, instance) : onExit(entry.target, entry, settings, instance)
+  );
 };
 const observeElements = (observer, elements) => {
   elements.forEach((element) => {
@@ -1485,12 +1486,17 @@ class DocsViewer {
       this.$pageNumberInput.textContent = String(pageIndex + 1);
       this.onPageIndexChanged(pageIndex);
       this.$btnPageBack.classList.toggle(this.wrapClassName("footer-btn-disable"), pageIndex == 0);
-      this.$btnPageNext.classList.toggle(this.wrapClassName("footer-btn-disable"), pageIndex == this.pages.length - 1);
+      this.$btnPageNext.classList.toggle(
+        this.wrapClassName("footer-btn-disable"),
+        pageIndex == this.pages.length - 1
+      );
     }
   }
   scrollPreview(pageIndex) {
     var _a2;
-    const previews = (_a2 = this.$preview) == null ? void 0 : _a2.querySelectorAll("." + this.wrapClassName("preview-page"));
+    const previews = (_a2 = this.$preview) == null ? void 0 : _a2.querySelectorAll(
+      "." + this.wrapClassName("preview-page")
+    );
     previews == null ? void 0 : previews.forEach((node, i) => {
       var _a3;
       (_a3 = node.querySelector("img")) == null ? void 0 : _a3.classList.toggle(this.wrapClassName("active"), Number(pageIndex) == i);
@@ -1624,11 +1630,19 @@ class DocsViewer {
       $pageJumps.appendChild($btnPageBack);
       this.$btnPageBack = $btnPageBack;
       if (this.onPlay) {
-        const $btnPlay = this.renderFooterBtn("btn-page-play", playSVG(this.namespace), pauseSVG(this.namespace));
+        const $btnPlay = this.renderFooterBtn(
+          "btn-page-play",
+          playSVG(this.namespace),
+          pauseSVG(this.namespace)
+        );
         const returnPlay = () => {
-          this.sideEffect.setTimeout(() => {
-            $btnPlay.classList.toggle(this.wrapClassName("footer-btn-playing"), false);
-          }, 500, "returnPlay");
+          this.sideEffect.setTimeout(
+            () => {
+              $btnPlay.classList.toggle(this.wrapClassName("footer-btn-playing"), false);
+            },
+            500,
+            "returnPlay"
+          );
         };
         this.sideEffect.addEventListener($btnPlay, "click", () => {
           var _a2;
@@ -1690,7 +1704,9 @@ class DocsViewer {
         this.context.extendWrapper.style.display = "block";
       }
       setTimeout(() => {
-        const $previewPage = this.$preview.querySelector("." + this.wrapClassName(`preview-page-${this.pageIndex}`));
+        const $previewPage = this.$preview.querySelector(
+          "." + this.wrapClassName(`preview-page-${this.pageIndex}`)
+        );
         if ($previewPage) {
           this.sideEffect.add(() => {
             const previewLazyLoad = new LazyLoad({
@@ -1907,7 +1923,7 @@ class PageRenderer {
       try {
         const url = new URL(page.src);
         url.searchParams.set("x-oss-process", "image/resize,l_50");
-        return __spreadProps(__spreadValues({}, page), { thumbnail: url.toString() });
+        return { ...page, thumbnail: url.toString() };
       } catch (e) {
         console.error(e);
         return page;
@@ -1966,7 +1982,11 @@ class PageRenderer {
     return $pages;
   }
   pagesScrollTo(pagesScrollTop, force) {
-    pagesScrollTop = clamp(pagesScrollTop, 0, this.pagesIntrinsicHeight - this.containerHeight / this.scale);
+    pagesScrollTop = clamp(
+      pagesScrollTop,
+      0,
+      this.pagesIntrinsicHeight - this.containerHeight / this.scale
+    );
     if (force || Math.abs(pagesScrollTop - this.pagesScrollTop) >= 1e-3) {
       this._turnOnHWA();
       this.pagesScrollTop = pagesScrollTop;
@@ -2024,7 +2044,11 @@ class PageRenderer {
     return this.containerWidth / this.pagesIntrinsicWidth || 1;
   }
   _calcThreshold() {
-    return clamp(Math.ceil(this.containerHeight / this.scale / this.pagesMinHeight / 2), 1, this.pages.length);
+    return clamp(
+      Math.ceil(this.containerHeight / this.scale / this.pagesMinHeight / 2),
+      1,
+      this.pages.length
+    );
   }
   _turnOnHWA() {
     if (this._hwaTimeout) {
@@ -2120,7 +2144,9 @@ class ScrollBar {
         const { clientY } = flattenEvent(ev2);
         const offsetY = (clientY - startY) / this.scale;
         if (Math.abs(offsetY) > 0 && this.onDragScroll) {
-          this.onDragScroll(startTop + offsetY * (this.pagesHeight * this.scale / this.containerHeight));
+          this.onDragScroll(
+            startTop + offsetY * (this.pagesHeight * this.scale / this.containerHeight)
+          );
         }
       };
       const trackEnd = () => {
@@ -2145,7 +2171,11 @@ class ScrollBar {
     return this.containerWidth / this.pagesWidth || 1;
   }
   _calcScrollbarHeight() {
-    return clamp(this.containerHeight / (this.pagesHeight * this.scale) * this.containerHeight, this.scrollbarMinHeight, this.containerHeight);
+    return clamp(
+      this.containerHeight / (this.pagesHeight * this.scale) * this.containerHeight,
+      this.scrollbarMinHeight,
+      this.containerHeight
+    );
   }
   _updateScrollbarHeight() {
     const newHeight = this._calcScrollbarHeight();
@@ -2212,7 +2242,13 @@ class StaticDocsViewer {
         };
         const windowManger = this.context.manager.windowManger;
         if (windowManger._appliancePlugin) {
-          await windowManger._appliancePlugin.screenshotToCanvasAsync(whiteCtx, scenePath, width, height, camera);
+          await windowManger._appliancePlugin.screenshotToCanvasAsync(
+            whiteCtx,
+            scenePath,
+            width,
+            height,
+            camera
+          );
         } else {
           this.whiteboardView.screenshotToCanvas(whiteCtx, scenePath, width, height, camera);
         }
@@ -2237,12 +2273,16 @@ class StaticDocsViewer {
     this.appId = appId;
     this.mountWhiteboard = mountWhiteboard;
     this._onUserScroll = onUserScroll;
-    const debouncedOnUserScroll = this.debounce(() => {
-      this.userScrolling = false;
-      if (this._onUserScroll) {
-        this._onUserScroll(this.pageRenderer.pagesScrollTop);
-      }
-    }, { wait: 80 }, "debounce-updateUserScroll");
+    const debouncedOnUserScroll = this.debounce(
+      () => {
+        this.userScrolling = false;
+        if (this._onUserScroll) {
+          this._onUserScroll(this.pageRenderer.pagesScrollTop);
+        }
+      },
+      { wait: 80 },
+      "debounce-updateUserScroll"
+    );
     this.updateUserScroll = () => {
       this.userScrolling = true;
       debouncedOnUserScroll();
@@ -2359,19 +2399,29 @@ class StaticDocsViewer {
       this.$whiteboardView = document.createElement("div");
       this.$whiteboardView.className = this.wrapClassName("wb-view");
       this.mountWhiteboard(this.$whiteboardView);
-      this.sideEffect.addEventListener(this.$whiteboardView, "wheel", (ev) => {
-        preventEvent(ev);
-        if (!this.readonly) {
-          this.pageScrollTo(this.pageRenderer.pagesScrollTop + ev.deltaY);
+      this.sideEffect.addEventListener(
+        this.$whiteboardView,
+        "wheel",
+        (ev) => {
+          preventEvent(ev);
+          if (!this.readonly) {
+            this.pageScrollTo(this.pageRenderer.pagesScrollTop + ev.deltaY);
+            this.updateUserScroll();
+          }
+        },
+        { passive: false, capture: true }
+      );
+      this.sideEffect.addEventListener(
+        this.$whiteboardView,
+        "touchmove",
+        (ev) => {
+          if (this.readonly || ev.touches.length <= 1) {
+            return;
+          }
           this.updateUserScroll();
-        }
-      }, { passive: false, capture: true });
-      this.sideEffect.addEventListener(this.$whiteboardView, "touchmove", (ev) => {
-        if (this.readonly || ev.touches.length <= 1) {
-          return;
-        }
-        this.updateUserScroll();
-      }, { passive: true, capture: true });
+        },
+        { passive: true, capture: true }
+      );
     }
     return this.$whiteboardView;
   }
@@ -2387,7 +2437,11 @@ class StaticDocsViewer {
   pageScrollTo(pageScrollTop) {
     const halfWbHeight = this.scrollTopElToPage(this.whiteboardView.size.height / 2);
     this.whiteboardView.moveCamera({
-      centerY: clamp(pageScrollTop + halfWbHeight, halfWbHeight, this.pageRenderer.pagesIntrinsicHeight - halfWbHeight),
+      centerY: clamp(
+        pageScrollTop + halfWbHeight,
+        halfWbHeight,
+        this.pageRenderer.pagesIntrinsicHeight - halfWbHeight
+      ),
       animationMode: "immediately"
     });
   }
@@ -2449,38 +2503,43 @@ class StaticDocsViewer {
         this.whiteboardView.callbacks.off("onSizeUpdated", handleSizeUpdate);
       };
     }, "whiteboard-size-update");
-    this.sideEffect.addEventListener(window, "keyup", (ev) => {
-      if (this.readonly || !this.box.focus || this.box.minimized || isEditable(ev.target)) {
-        return;
-      }
-      let newPageScrollTop = null;
-      switch (ev.key) {
-        case "PageDown": {
-          newPageScrollTop = this.pageRenderer.pagesScrollTop + this.pageRenderer.containerHeight / this.pageRenderer.scale;
-          break;
+    this.sideEffect.addEventListener(
+      window,
+      "keyup",
+      (ev) => {
+        if (this.readonly || !this.box.focus || this.box.minimized || isEditable(ev.target)) {
+          return;
         }
-        case "PageUp": {
-          newPageScrollTop = this.pageRenderer.pagesScrollTop - this.pageRenderer.containerHeight / this.pageRenderer.scale;
-          break;
+        let newPageScrollTop = null;
+        switch (ev.key) {
+          case "PageDown": {
+            newPageScrollTop = this.pageRenderer.pagesScrollTop + this.pageRenderer.containerHeight / this.pageRenderer.scale;
+            break;
+          }
+          case "PageUp": {
+            newPageScrollTop = this.pageRenderer.pagesScrollTop - this.pageRenderer.containerHeight / this.pageRenderer.scale;
+            break;
+          }
+          case "ArrowDown": {
+            newPageScrollTop = this.pageRenderer.pagesScrollTop + this.pageRenderer.containerHeight / 4 / this.pageRenderer.scale;
+            break;
+          }
+          case "ArrowUp": {
+            newPageScrollTop = this.pageRenderer.pagesScrollTop - this.pageRenderer.containerHeight / 4 / this.pageRenderer.scale;
+            break;
+          }
         }
-        case "ArrowDown": {
-          newPageScrollTop = this.pageRenderer.pagesScrollTop + this.pageRenderer.containerHeight / 4 / this.pageRenderer.scale;
-          break;
+        if (newPageScrollTop !== null) {
+          if (this._onUserScroll) {
+            this._onUserScroll(newPageScrollTop);
+          } else {
+            this.pageScrollTo(newPageScrollTop);
+            this.updateUserScroll();
+          }
         }
-        case "ArrowUp": {
-          newPageScrollTop = this.pageRenderer.pagesScrollTop - this.pageRenderer.containerHeight / 4 / this.pageRenderer.scale;
-          break;
-        }
-      }
-      if (newPageScrollTop !== null) {
-        if (this._onUserScroll) {
-          this._onUserScroll(newPageScrollTop);
-        } else {
-          this.pageScrollTo(newPageScrollTop);
-          this.updateUserScroll();
-        }
-      }
-    }, { capture: true });
+      },
+      { capture: true }
+    );
   }
   debounce(fn, options, disposerID) {
     const dFn = debounceFn(fn, options);
@@ -2730,20 +2789,32 @@ const NetlessAppDocsViewer = {
     if (!whiteboardView) {
       throw new Error("[Docs Viewer]: no whiteboard view.");
     }
-    const pages = scenes.map(({ ppt }) => ppt ? {
-      width: ppt.width,
-      height: ppt.height,
-      src: ppt.src,
-      thumbnail: ppt.previewURL
-    } : null).filter((page) => Boolean(page));
+    const pages = scenes.map(
+      ({ ppt }) => ppt ? {
+        width: ppt.width,
+        height: ppt.height,
+        src: ppt.src,
+        thumbnail: ppt.previewURL
+      } : null
+    ).filter((page) => Boolean(page));
     if (pages.length <= 0) {
       throw new Error("[Docs Viewer]: empty scenes.");
     }
     box.mountStyles(styles);
     if (pages[0].src.startsWith("ppt")) {
-      return setupDynamicDocsViewer(context, whiteboardView, box, pages);
+      return setupDynamicDocsViewer(
+        context,
+        whiteboardView,
+        box,
+        pages
+      );
     } else {
-      return setupStaticDocsViewer(context, whiteboardView, box, pages);
+      return setupStaticDocsViewer(
+        context,
+        whiteboardView,
+        box,
+        pages
+      );
     }
   }
 };
@@ -2794,6 +2865,9 @@ function setupStaticDocsViewer(context, whiteboardView, box, pages) {
       if (controller) {
         return [controller.pageIndex, docsViewer.pages.length];
       }
+    },
+    togglePreview: (visible) => {
+      docsViewer.viewer.togglePreview(visible);
     }
   };
 }
@@ -2814,19 +2888,22 @@ function setupDynamicDocsViewer(context, whiteboardView, box, pages) {
   });
   context.mountView(docsViewer.$whiteboardView);
   if (context.isAddApp) {
-    whiteboardView.callbacks.once("onSizeUpdated", ({ width: contentWidth, height: contentHeight }) => {
-      if (pages.length > 0 && box.state !== "maximized") {
-        const { width: pageWidth, height: pageHeight } = pages[0];
-        const preferHeight = pageHeight / pageWidth * contentWidth;
-        const diff = preferHeight - contentHeight;
-        if (diff !== 0 && context.getIsWritable()) {
-          context.emitter.emit("setBoxSize", {
-            width: box.width,
-            height: box.height + diff / box.containerRect.height
-          });
+    whiteboardView.callbacks.once(
+      "onSizeUpdated",
+      ({ width: contentWidth, height: contentHeight }) => {
+        if (pages.length > 0 && box.state !== "maximized") {
+          const { width: pageWidth, height: pageHeight } = pages[0];
+          const preferHeight = pageHeight / pageWidth * contentWidth;
+          const diff = preferHeight - contentHeight;
+          if (diff !== 0 && context.getIsWritable()) {
+            context.emitter.emit("setBoxSize", {
+              width: box.width,
+              height: box.height + diff / box.containerRect.height
+            });
+          }
         }
       }
-    });
+    );
   }
   return {
     viewer: () => {

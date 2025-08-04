@@ -154,6 +154,9 @@ function setupStaticDocsViewer(
         return [controller.pageIndex, docsViewer.pages.length] as [page: number, length: number];
       }
     },
+    togglePreview: (visible?: boolean) => {
+      docsViewer.viewer.togglePreview(visible);
+    },
   };
 }
 

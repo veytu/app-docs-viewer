@@ -20,7 +20,7 @@ export interface NetlessAppDynamicDocsViewerAttributes {
 }
 export interface AppOptions {
 }
-export declare type MagixEvents = {
+export type MagixEvents = {
     [key: string]: string;
 };
 declare const NetlessAppDocsViewer: NetlessApp<NetlessAppStaticDocsViewerAttributes | NetlessAppDynamicDocsViewerAttributes, MagixEvents, AppOptions, AppResult>;

@@ -7,7 +7,7 @@ export interface DocsViewerPage {
     width: number;
     thumbnail?: string;
 }
-declare type contextType = AppContext<NetlessAppStaticDocsViewerAttributes | NetlessAppDynamicDocsViewerAttributes, AppOptions>;
+type contextType = AppContext<NetlessAppStaticDocsViewerAttributes | NetlessAppDynamicDocsViewerAttributes, AppOptions>;
 export interface DocsViewerConfig {
     readonly: boolean;
     box: ReadonlyTeleBox;
