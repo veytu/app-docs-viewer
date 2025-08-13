@@ -144,7 +144,7 @@ function setupStaticDocsViewer(
     docsViewer.setReadonly(!isWritable);
     whiteboardView.disableCameraTransform = !isWritable;
   });
-  return {
+  const result = {
     viewer: () => {
       return docsViewer;
     },
@@ -154,10 +154,15 @@ function setupStaticDocsViewer(
         return [controller.pageIndex, docsViewer.pages.length] as [page: number, length: number];
       }
     },
-    togglePreview: (visible?: boolean) => {
-      docsViewer.viewer.togglePreview(visible);
-    },
-  };
+  }
+  if ((context.getInitScenePath()?.toLowerCase()?.indexOf("pdf") ?? 0) > 0) {
+    return {
+      ...result, togglePreview: (visible?: boolean) => {
+        docsViewer.viewer.togglePreview(visible);
+      },
+    }
+  }
+  return result;
 }
 
 function setupDynamicDocsViewer(

@@ -2819,7 +2819,7 @@ const NetlessAppDocsViewer = {
   }
 };
 function setupStaticDocsViewer(context, whiteboardView, box, pages) {
-  var _a2;
+  var _a2, _b, _c, _d;
   whiteboardView.disableCameraTransform = !context.getIsWritable();
   const docsViewer = new StaticDocsViewer({
     context,
@@ -2856,7 +2856,7 @@ function setupStaticDocsViewer(context, whiteboardView, box, pages) {
     docsViewer.setReadonly(!isWritable);
     whiteboardView.disableCameraTransform = !isWritable;
   });
-  return {
+  const result = {
     viewer: () => {
       return docsViewer;
     },
@@ -2865,11 +2865,17 @@ function setupStaticDocsViewer(context, whiteboardView, box, pages) {
       if (controller) {
         return [controller.pageIndex, docsViewer.pages.length];
       }
-    },
-    togglePreview: (visible) => {
-      docsViewer.viewer.togglePreview(visible);
     }
   };
+  if (((_d = (_c = (_b = context.getInitScenePath()) == null ? void 0 : _b.toLowerCase()) == null ? void 0 : _c.indexOf("pdf")) != null ? _d : 0) > 0) {
+    return {
+      ...result,
+      togglePreview: (visible) => {
+        docsViewer.viewer.togglePreview(visible);
+      }
+    };
+  }
+  return result;
 }
 function setupDynamicDocsViewer(context, whiteboardView, box, pages) {
   whiteboardView.disableCameraTransform = true;
